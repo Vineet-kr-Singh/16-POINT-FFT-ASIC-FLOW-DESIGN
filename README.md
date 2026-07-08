@@ -45,12 +45,14 @@ Extensive synthesis exploration was conducted using Yosys to identify the optima
 * **Trade-off Analysis:** AREA 1 was chosen over the AREA 0 baseline as it yielded the smallest footprint (28,820.1 µm²) while simultaneously exhibiting a slight reduction in signal delay (12.24 ns vs. 12.40 ns). 
 
 ## Repository Structure
+
+```text
 ├── src/                    # Verilog RTL source files (Butterfly, Multiplier, FSM, etc.)
+├── tb/                     # Testbenches for module-level and top-level verification
 ├── openlane_runs/          # PnR configuration scripts and physical design summaries
 ├── docs/                   # PDF Report, FSM diagrams, and schematic visualizations
 ├── images/                 # Heatmaps (IR Drop, Routing Congestion) and GDSII layouts
 └── README.md               # Project documentation
-
 ## Future Scope
 * **Scalability:** Extend the RTL architecture to support 32-point and 64-point FFT computations.
 * **Throughput Optimization:** Implement multi-stage pipelining and parallel processing architectures.
