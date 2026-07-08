@@ -46,13 +46,21 @@ Extensive synthesis exploration was conducted using Yosys to identify the optima
 
 ## Repository Structure
 
-```text
-├── src/                    # Verilog RTL source files (Butterfly, Multiplier, FSM, etc.)
-├── tb/                     # Testbenches for module-level and top-level verification
-├── openlane_runs/          # PnR configuration scripts and physical design summaries
-├── docs/                   # PDF Report, FSM diagrams, and schematic visualizations
-├── images/                 # Heatmaps (IR Drop, Routing Congestion) and GDSII layouts
-└── README.md               # Project documentation
+    ├── src/                    # Verilog RTL source files (Butterfly, Multiplier, FSM, etc.)
+    ├── tb/                     # Testbenches for module-level and top-level verification
+    ├── openlane_runs/          # PnR configuration scripts and physical design summaries
+    ├── docs/                   # PDF Report, FSM diagrams, and schematic visualizations
+    ├── images/                 # Heatmaps (IR Drop, Routing Congestion) and GDSII layouts
+    └── README.md               # Project documentation
+
+## Local Simulation Instructions
+To verify the frequency-domain conversions locally:
+
+1. Clone this repository and open it in Visual Studio Code.
+2. Compile the Verilog testbenches using your preferred simulator (like Icarus Verilog). Note: For Apple Silicon (M1) systems, ensure your simulator binaries and GTKWave are natively compiled for the arm64 architecture to prevent translation bottlenecks.
+3. Run the simulation to generate the .vcd waveform dump.
+4. Open the waveform in GTKWave to validate the real and imaginary FFT output vectors against theoretical mathematical models.
+
 ## Future Scope
 * **Scalability:** Extend the RTL architecture to support 32-point and 64-point FFT computations.
 * **Throughput Optimization:** Implement multi-stage pipelining and parallel processing architectures.
